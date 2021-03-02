@@ -1,0 +1,28 @@
+<mat-form-field>
+  <mat-label>Enter Period</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate
+    (dateInput)="addEvent('start', $event)"
+    (dateChange)="addEvent('change', $event)"
+    placeholder="Start date">
+    <input matEndDate
+    (dateInput)="addEvent('start', $event)"
+    (dateChange)="addEvent('change', $event)"
+    placeholder="End date">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker">
+    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+  </mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+  <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start date</mat-error>
+  <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+</mat-form-field>
+
+<button type="button" class="btn btn-success" (click)="showTable()">Show</button>
+<div *ngIf="show">
+  <button type="button" class="btn btn-info" (click)="setPeriod('1')">Yesterday</button>
+  <button type="button" class="btn btn-info" (click)="setPeriod('7')">Last 7 Days</button>
+  <button type="button" class="btn btn-info" (click)="setPeriod('30')">Last 30 Days</button>
+  <button type="button" class="btn btn-info" (click)="setPeriod('Month')">Last This Month</button>
+  <button type="button" class="btn btn-info" (click)="setPeriod('')">Custom</button>
+</div>

@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <h4 class="card-title font-main-title col-sm-10">Best Selling</h4>
+      <button mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+      class="class-sm-2">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>mode_edit</mat-icon>
+          <span>Edit</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>delete</mat-icon>
+          <span>Delete</span>
+        </button>
+      </mat-menu>
+    </div>
+    <div class="card border-light mb-3" *ngFor="let product of products">
+      <div class="row no-gutters">
+        <div class="col-md-4 center">
+          <img [src]="product.img" class="card-img img-center">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title font-title">{{ product.name }}</h5>
+            <div class="row">
+              <p class="card-text col-md-6 font-content">{{ product.price }}</p>
+              <p class="card-text col-md-6 font-content">{{ product.quantity }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

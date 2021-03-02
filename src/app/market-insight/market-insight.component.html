@@ -1,0 +1,49 @@
+<div class="header">
+  <h1>MARKET INSIGHT</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="row card-body">
+        <div class="col-sm-6">
+          <p class="card-text">Sales Turnover</p>
+          <h4 class="card-title">Rp 3,600,000</h4>
+        </div>
+        <div class="col-sm-6">
+          <div class="col-sm-6">
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon>mode_edit</mat-icon>
+                <span>Edit</span>
+              </button>
+              <button mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
+              </button>
+            </mat-menu>
+          </div>
+          <img class="col-sm-6" src="../../assets/cart_pic.jpg" alt="">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <app-purchase-chart></app-purchase-chart>
+  </div>
+
+  <div class="col-sm-3">
+    <app-list-card></app-list-card>
+  </div>
+
+  <div class="col-sm-3">
+    <app-list-card></app-list-card>
+  </div>
+</div>
